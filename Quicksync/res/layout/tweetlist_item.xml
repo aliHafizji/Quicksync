@@ -23,10 +23,10 @@
 			android:layout_height="wrap_content"
 			android:orientation="horizontal"
 			android:layout_weight="1">
+<!-- 			android:textStyle="?attr/tweetUsernameStyle" -->
+<!-- android:textAppearance="?attr/tweetUsernameAppearance" -->
 		<TextView android:id="@+id/tweet_screen_name"
 			android:layout_weight="1"
-			android:textStyle="?attr/tweetUsernameStyle"
-			android:textAppearance="?attr/tweetUsernameAppearance"
 			android:layout_height="wrap_content"
 			android:layout_width="wrap_content" />
 		<ImageView android:id="@+id/tweet_favorite"
@@ -36,15 +36,18 @@
 			android:layout_height="wrap_content" />
 	</LinearLayout>
 
+<!-- 	android:textStyle="?attr/tweetMessageStyle" -->
+<!-- 		android:textColor="?attr/tweetMessageColor" -->
+<!-- 		android:textAppearance="?attr/tweetMessageAppearance" -->
 	<TextView android:layout_height="wrap_content" android:id="@+id/tweet_message"
 		android:layout_width="fill_parent"
-		android:textStyle="?attr/tweetMessageStyle"
-		android:textColor="?attr/tweetMessageColor"
-		android:textAppearance="?attr/tweetMessageAppearance" />
+		 />
+		 
+<!-- 		 android:textStyle="?attr/tweetSentDateStyle" -->
+<!-- 		android:textColor="?attr/tweetSentDateColor" -->
+<!-- 		android:textAppearance="?attr/tweetSentDateAppearance" -->
 	<TextView android:layout_height="wrap_content" android:id="@+id/tweet_sent"
 		android:layout_width="fill_parent"
-		android:textStyle="?attr/tweetSentDateStyle"
-		android:textColor="?attr/tweetSentDateColor"
-		android:textAppearance="?attr/tweetSentDateAppearance" />
+		 />
 
 </LinearLayout>

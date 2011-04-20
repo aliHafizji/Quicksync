@@ -1,1 +1,5 @@
-This is a simple, fast and light weight twitter client for android. It supports all the functionality that normal clients support, in addition to that it has features that let the users decide what they would like to filter, giving them only a list of most useful tweets.
+This is a simple, fast and light weight twitter client for android. It supports all the functionality that a normal client supports, 
+in addition to that it has features that let the users decide what they would like to filter, giving them only a list of most useful tweets. The filtering mechanism
+will be built using Bayesian classification or other learning techniques which will determine which tweets will the user most likely like. 
+
+The basic architecture is adopted from the Andtweet project.

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- 
+    Copyright (C) 2011 Ali Hafizji
 	Copyright (C) 2008 Torgny Bjers
 	
 	Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +16,7 @@
 	limitations under the License.
  -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-	package="com.xorcode.andtweet" android:versionName="1.1.1" android:versionCode="37">
+	package="com.quicksync.twitter" android:versionName="1.1.1" android:versionCode="37">
 
 	<uses-sdk android:minSdkVersion="3"/>
 
@@ -23,20 +24,20 @@
 
 		<meta-data android:name="android.app.default_searchable" android:value=".TweetListActivity"></meta-data>
 
-		<provider android:name=".AndTweetProvider"
-			android:authorities="com.xorcode.andtweet"></provider>
+		<provider android:name="QuicksyncProvider"
+			android:authorities="com.quicksync.twitter"></provider>
 
-		<provider android:name=".data.TimelineSearchSuggestionProvider" 
-			android:authorities="com.xorcode.andtweet.TimelineSuggestionProvider"></provider>
+		<provider android:name="com.quicksync.twitter.data.TimelineSearchSuggestionProvider" 
+			android:authorities="com.quicksync.twitter.TimelineSuggestionProvider"></provider>
 
-		<service android:process=":remote" android:name=".AndTweetService">
+		<service android:process=":remote" android:name="QuicksyncService">
 			<intent-filter>
-				<action android:name="com.xorcode.andtweet.IAndTweetService"></action>
-				<action android:name="com.xorcode.andtweet.SERVICE"></action>
+				<action android:name="com.quicksync.twitter.IAndTweetService"></action>
+				<action android:name="com.quicksync.twitter.SERVICE"></action>
 			</intent-filter>
 		</service>
 
-		<receiver android:name=".AndTweetServiceManager">
+		<receiver android:name="QuicksyncServiceManager">
 			<intent-filter android:label="android.intent.action.BOOT_COMPLETED">
 				<action android:name="android.intent.action.BOOT_COMPLETED"></action>
 			</intent-filter>
@@ -52,7 +53,7 @@
 				<action android:name="android.intent.action.VIEW"></action>
 				<action android:name="android.intent.action.PICK"></action>
 				<category android:name="android.intent.category.DEFAULT"></category>
-				<data android:mimeType="vnd.android.cursor.dir/vnd.xorcode.andtweet.tweet"></data>
+				<data android:mimeType="vnd.android.cursor.dir/vnd.quicksync.twitter.tweet"></data>
 			</intent-filter>
 			<intent-filter>
 				<action android:name="android.intent.action.SEARCH"></action>
@@ -66,7 +67,7 @@
 				<action android:name="android.intent.action.VIEW"></action>
 				<action android:name="android.intent.action.PICK"></action>
 				<category android:name="android.intent.category.DEFAULT"></category>
-				<data android:mimeType="vnd.android.cursor.dir/vnd.xorcode.andtweet.directmessage"></data>
+				<data android:mimeType="vnd.android.cursor.dir/vnd.quicksync.twitter.directmessage"></data>
 			</intent-filter>
 			<intent-filter>
 				<action android:name="android.intent.action.SEARCH"></action>
@@ -79,7 +80,7 @@
 			<intent-filter android:label="@string/resolve_view">
 				<action android:name="android.intent.action.VIEW"></action>
 				<category android:name="android.intent.category.DEFAULT"></category>
-				<data android:mimeType="vnd.android.cursor.item/vnd.xorcode.andtweet.tweet"></data>
+				<data android:mimeType="vnd.android.cursor.item/vnd.quicksync.twitter.tweet"></data>
 			</intent-filter>
 		</activity>
 
@@ -111,16 +112,16 @@
 			</intent-filter>
 		</activity>
 
-        <receiver android:name=".appwidget.AndTweetAppWidgetProvider">
+        <receiver android:name="appwidget.QuicksyncAppWidgetProvider">
             <meta-data android:name="android.appwidget.provider"
                     android:resource="@xml/appwidget_info" />
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-                <action android:name="com.xorcode.andtweet.action.APPWIDGET_UPDATE" />
+                <action android:name="com.quicksync.twitter.action.APPWIDGET_UPDATE" />
             </intent-filter>
         </receiver>
 
-        <activity android:name=".appwidget.AndTweetAppWidgetConfigure">
+        <activity android:name="appwidget.QuicksyncAppWidgetConfigure">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
             </intent-filter>

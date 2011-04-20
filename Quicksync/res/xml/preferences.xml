@@ -144,20 +144,4 @@
 		</PreferenceScreen>
 	</PreferenceCategory>
 
-	<!-- SETTINGS -->
-	<PreferenceCategory android:title="@string/category_title_preference_information">
-		<Preference android:key="contact_developer" android:title="@string/title_preference_contact_developer">
-			<intent android:action="android.intent.action.VIEW" android:data="http://andtweet.com/appcontact" />
-		</Preference>
-		<Preference android:key="report_bug" android:title="@string/title_preference_report_bug">
-			<intent android:action="android.intent.action.VIEW" android:data="http://code.google.com/p/andtweet/issues/entry" />
-		</Preference>
-		<Preference android:key="change_log" android:title="@string/title_preference_change_log">
-			<intent android:action="android.intent.action.VIEW" android:data="http://andtweet.com/appchangelog" />
-		</Preference>
-		<Preference android:key="about_application" android:title="@string/title_preference_about_application">
-			<intent android:action="android.intent.action.VIEW" android:data="http://andtweet.com/appabout" />
-		</Preference>
-	</PreferenceCategory>
-
 </PreferenceScreen>
